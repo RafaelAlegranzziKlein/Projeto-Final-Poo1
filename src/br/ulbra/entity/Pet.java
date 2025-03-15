@@ -1,11 +1,13 @@
-
 package br.ulbra.entity;
+
+import java.util.Calendar;
 
 /**
  *
  * @author Rafael Klein
  */
 public class Pet {
+
     private int idUso;
     private String nomePet;
     private String racaPet;
@@ -15,18 +17,18 @@ public class Pet {
 
     @Override
     public String toString() {
-        return    "ID do Pet                :" + idUso
-                + "Nome do Pet              :" + nomePet 
-                + "Raça do Pet              :" + racaPet 
-                + "Sexo do Pet              :" + sexoPet 
-                + "Cor do pelo do Pet       :" + corPeloPet 
+        return "ID do Pet                :" + idUso
+                + "Nome do Pet              :" + nomePet
+                + "Raça do Pet              :" + racaPet
+                + "Sexo do Pet              :" + sexoPet
+                + "Cor do pelo do Pet       :" + corPeloPet
                 + "Ano de nascimento do Pet :" + anoNascimentoPet;
     }
 
     public Pet() {
     }
 
-    public Pet(int idUso,String nomePet, String racaPet, String sexoPet, String corPeloPet, int anoNascimentoPet) {
+    public Pet(int idUso, String nomePet, String racaPet, String sexoPet, String corPeloPet, int anoNascimentoPet) {
         this.idUso = idUso;
         this.nomePet = nomePet;
         this.racaPet = racaPet;
@@ -74,6 +76,21 @@ public class Pet {
     public void setAnoNascimentoPet(int anoNascimentoPet) {
         this.anoNascimentoPet = anoNascimentoPet;
     }
+
+    public int calcularIdade() {
+        Calendar cal = Calendar.getInstance();
+        int anoAtual = cal.get(Calendar.YEAR);
+        return anoAtual - getAnoNascimentoPet();
+    }
     
-    
+    public boolean validarNome(String nome){
+        String regex ="^[a-zA-Z]{3,}$";
+        return nome.matches(regex);
+    }
+    public String exibirInformacoes() {
+    return String.format("Nome: %s\nRaça: %s\nIdade: %d\nSexo: %s\nCor do Pelo: %s", 
+                          nomePet, racaPet, calcularIdade(), sexoPet, corPeloPet);
+
+    }
+
 }

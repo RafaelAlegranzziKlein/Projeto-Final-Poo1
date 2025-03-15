@@ -34,7 +34,7 @@ public class UsuarioDao {
 
         try {
 
-            stmt = con.prepareStatement("SELECT * FROM tbusuarios WHERE emailUsu = ? and senhaUsu = ?");
+            stmt = con.prepareStatement("SELECT * FROM usuario WHERE email = ? and senha = ?");
             stmt.setString(1, email);
             stmt.setString(2, senha);
 

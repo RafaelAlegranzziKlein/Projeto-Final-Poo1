@@ -5,6 +5,12 @@
  */
 package br.ulbra.view;
 
+import br.ulbra.dao.UsuarioDao;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aluno.saolucas
@@ -109,6 +115,11 @@ public class FrmLogin extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jButton3.setText("Logar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 483, 150, 40));
 
         jPanel3.setBackground(new java.awt.Color(229, 217, 242));
@@ -231,6 +242,23 @@ public class FrmLogin extends javax.swing.JFrame {
     private void txtEmailLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailLoginActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       
+        UsuarioDao dao = null;
+        try {
+            dao = new UsuarioDao();
+            if (dao.checkLogin(txtEmailLogin.getText(), txtSenhaLogin.getText())) {
+                new FrmMenu().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Login ou Senha incorreta!");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
