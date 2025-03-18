@@ -33,21 +33,23 @@ public class FrmMenu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnCadPet = new javax.swing.JButton();
         btnFechar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnCadPet1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(162, 148, 249));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnCadPet.setText("Abrir Cadastro de Pet");
+        btnCadPet.setText("Abrir Cadastro de Usuario");
         btnCadPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadPetActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCadPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 150, 40));
+        jPanel1.add(btnCadPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 160, 40));
 
         btnFechar.setText("Fechar");
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
@@ -55,30 +57,69 @@ public class FrmMenu extends javax.swing.JFrame {
                 btnFecharActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 150, 40));
+        jPanel1.add(btnFechar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 150, 40));
 
-        jButton1.setText("jButton1");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(205, 193, 255));
 
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Menu Pet Shop");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/9022263_dog_duotone_icon.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 118, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(102, 102, 102))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 140));
+
+        btnCadPet1.setText("Abrir Cadastro de Pet");
+        btnCadPet1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadPet1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCadPet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadPetActionPerformed
-       new FrmCadPet().setVisible(true);
+       new FrmCadUsuario() . setVisible(true);
+       
+        this.dispose();
     }//GEN-LAST:event_btnCadPetActionPerformed
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
@@ -86,6 +127,11 @@ public class FrmMenu extends javax.swing.JFrame {
         this.dispose();
         new FrmLogin(). setVisible(true);
     }//GEN-LAST:event_btnFecharActionPerformed
+
+    private void btnCadPet1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadPet1ActionPerformed
+        this.dispose();
+        new FrmCadPet().setVisible(true);
+    }//GEN-LAST:event_btnCadPet1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,9 +171,11 @@ public class FrmMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadPet;
+    private javax.swing.JButton btnCadPet1;
     private javax.swing.JButton btnFechar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

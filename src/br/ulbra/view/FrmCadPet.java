@@ -266,11 +266,11 @@ public class FrmCadPet extends javax.swing.JFrame {
         buttonGroup1.add(Masculino);
         Masculino.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Masculino.setSelected(true);
-        Masculino.setText("Masculino");
+        Masculino.setText("Macho");
 
         buttonGroup1.add(Feminino);
         Feminino.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Feminino.setText("Feminino");
+        Feminino.setText("Femea");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -284,7 +284,7 @@ public class FrmCadPet extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Feminino))
                     .addComponent(jLabel7))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -474,7 +474,6 @@ public class FrmCadPet extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -484,13 +483,11 @@ public class FrmCadPet extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lbIdade;
     private javax.swing.JTextField txtAnoNascimento;
     private javax.swing.JTextField txtCorPelo;
